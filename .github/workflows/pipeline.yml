@@ -55,11 +55,11 @@ jobs:
           healthcheck: "https://pokedexappjusamankki.herokuapp.com/health"
           checkstring: "ok"
           rollbackonhealthcheckfailed: true
-      - name: push to heroku success
-        uses: 8398a7/action-slack@v3.9.0
-        with:
-          status: ${{ job.status }}
-          fields: repo, commit, took, message, author
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-        if: ${{ success() }}
+      # - name: push to heroku success
+      #   uses: 8398a7/action-slack@v3.9.0
+      #   with:
+      #     status: ${{ job.status }}
+      #     fields: repo, commit, took, message, author
+      #   env:
+      #     SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      #   if: ${{ success() }}
