@@ -2,7 +2,7 @@ name: Healthcheck
 
 on:
   schedule:
-    - cron:  '5 * * * *'
+    - cron:  '0 0-12 * * *' #runs at minute 0
 
 jobs:
   healthcheck:
@@ -13,6 +13,6 @@ jobs:
         with:
           url: https://pokedexappjusamankki.herokuapp.com/
           follow-redirect: no # Optional, defaults to "no"
-          max-attempts: 3 # Optional, defaults to 1
-          retry-delay: 10s # Optional, only applicable to max-attempts > 1
-          retry-all: no # Optional, defaults to "no"
+          # max-attempts: 3 # Optional, defaults to 1
+          # retry-delay: 10s # Optional, only applicable to max-attempts > 1
+          # retry-all: no # Optional, defaults to "no"
